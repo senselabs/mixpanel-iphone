@@ -1727,7 +1727,19 @@ static Mixpanel *sharedInstance = nil;
     }
     NSArray *tokens = @[[NSString stringWithString:hex]];
     NSDictionary *properties = @{@"$ios_devices": tokens};
-    [self addPeopleRecordToQueueWithAction:@"$union" andProperties:properties];
+    
+    // SenseLabs Note: Change this to set to overwrite previous devices
+    [self addPeopleRecordToQueueWithAction:@"$set" andProperties:properties];
+}
+
+// SenseLabs Addition
+- (void)removePushDeviceToken
+{
+    NSArray *tokens = @[[NSString stringWithString:@"0"]];
+    NSDictionary *properties = @{@"$ios_devices": tokens};
+    
+    // SenseLabs note: Change this to set to overwrite previous devices
+    [self addPeopleRecordToQueueWithAction:@"$set" andProperties:properties];
 }
 
 - (void)set:(NSDictionary *)properties
