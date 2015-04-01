@@ -702,6 +702,13 @@
  */
 - (void)addPushDeviceToken:(NSData *)deviceToken;
 
+/**
+ *  SenseLabs Addition
+ *
+ *  Sets the current device token to 0 on Mixpanel's database.
+ */
+- (void)removePushDeviceToken;
+
 /*!
  @method
 
