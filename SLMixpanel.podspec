@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'SLMixpanel'
-  s.version      = '3.2.3'
+  s.version      = '3.2.4'
   s.summary      = 'iPhone tracking library for Mixpanel Analytics'
   s.homepage     = 'https://github.com/senselabs/mixpanel-iphone'
   s.license      = 'Apache License, Version 2.0'
@@ -14,13 +14,13 @@ Pod::Spec.new do |s|
     ss.source_files  = 'Mixpanel/**/*.{m,h}'
     ss.resources 	 = ['Mixpanel/**/*.{png,storyboard}']
     ss.frameworks = 'UIKit', 'Foundation', 'SystemConfiguration', 'CoreTelephony', 'Accelerate', 'CoreGraphics', 'QuartzCore'
-    ss.dependency 'Mixpanel/MPCategoryHelpers'
+    ss.dependency 'SLMixpanel/MPCategoryHelpers'
     ss.libraries = 'icucore', 'MPCategoryHelpers'
   end
 
   s.subspec 'MPCategoryHelpers' do |ss|
-    ss.preserve_paths = 'Mixpanel/MPCategoryHelpers.h'
-    ss.vendored_libraries = 'Mixpanel/libMPCategoryHelpers.a'
+    ss.preserve_paths = 'SLMixpanel/MPCategoryHelpers.h'
+    ss.vendored_libraries = 'SLMixpanel/libMPCategoryHelpers.a'
     ss.libraries = 'MPCategoryHelpers'
   end
 
