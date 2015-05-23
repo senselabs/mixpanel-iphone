@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.default_subspec = 'Mixpanel'
 
-  s.subspec 'Mixpanel' do |ss|
+  s.subspec 'SLMixpanel' do |ss|
     ss.source_files  = 'Mixpanel/**/*.{m,h}'
     ss.resources 	 = ['Mixpanel/**/*.{png,storyboard}']
     ss.frameworks = 'UIKit', 'Foundation', 'SystemConfiguration', 'CoreTelephony', 'Accelerate', 'CoreGraphics', 'QuartzCore'
